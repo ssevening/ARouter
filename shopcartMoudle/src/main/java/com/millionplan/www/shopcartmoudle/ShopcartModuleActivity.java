@@ -35,7 +35,9 @@ public class ShopcartModuleActivity extends AppCompatActivity {
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
                 Fragment fragment = (Fragment) ARouter.getInstance().build("/fragment/productFragment").navigation();
-
+                Bundle bundle = new Bundle();
+                bundle.putString("productId", "1234567890");
+                fragment.setArguments(bundle);
                 fragmentTransaction.replace(R.id.rl_container, fragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
