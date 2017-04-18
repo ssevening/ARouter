@@ -128,12 +128,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.navByType:
                 ARouter.getInstance().navigation(HelloService.class).sayHello("mike");
                 break;
-            case R.id.navToMoudle1:
-                ARouter.getInstance().build("/module/1").navigation();
+            case R.id.navToProductMoudle:
+                ARouter.getInstance().build("/module/product").navigation();
                 break;
-            case R.id.navToMoudle2:
-                // 这个页面主动指定了Group名
-                ARouter.getInstance().build("/module/2", "m2").navigation();
+            case R.id.navToShopcartMoudle:
+                // 这里就是指定去购物车
+                ARouter.getInstance().build("/module/shopcart", "moudle").navigation();
                 break;
             case R.id.destroy:
                 ARouter.getInstance().destroy();

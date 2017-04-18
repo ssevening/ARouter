@@ -197,18 +197,18 @@
                 android:text="多模块测试(请先初始化)" />
 
             <Button
-                android:id="@+id/navToMoudle1"
+                android:id="@+id/navToProductMoudle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="onClick"
-                android:text="跳转到模块1" />
+                android:text="跳转到产品模块" />
 
             <Button
-                android:id="@+id/navToMoudle2"
+                android:id="@+id/navToShopcartMoudle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="onClick"
-                android:text="跳转到模块2" />
+                android:text="跳转到购物车模块" />
         </LinearLayout>
 
         <LinearLayout

@@ -1,5 +1,5 @@
-include ':app'
+include ':app', ':shopcartMoudle', ':openservicemoudle'
 include ':arouter-api'
 include ':arouter-compiler'
 include ':arouter-annotation'
-include ':test-module-1'
+include ':productMoudle'

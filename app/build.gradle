@@ -50,10 +50,9 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
-    annotationProcessor project(':arouter-compiler')
-    compile project(':arouter-api')
-    compile project(':test-module-1')
-    compile project(':arouter-annotation')
+    // annotationProcessor project(':arouter-compiler')
+    compile project(':productMoudle')
+    compile project(':shopcartMoudle')
 
     compile 'com.alibaba:fastjson:1.2.9'
 

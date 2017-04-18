@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+
+    package="com.millionplan.www.shopcartmoudle">
+
+    <application>
+
+        <activity android:name=".ShopcartModuleActivity"></activity>
+    </application>
+
+</manifest>
