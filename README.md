@@ -8,6 +8,19 @@
 
 ---
 
+#### 本Demo中实现了以下功能：
+开发了一个Demo，用于多模块业务的开发以及数据通讯和传递，通过ARouter，可以实现模块间解藕，独立。
+* App中修改了到 shopcartMoudle和productMoudle的路径。
+* openServiceMoudle 主要用于模块间数据传递，比如：购物车要获取产品的的一些详细信息，但又不能直接依赖产品模块。
+* shopcartMoudle 功能：
+   * 跨Moudle调用了ProductMoudle中的ProductService，获得了相应的产品信息
+   * 跨Moudle调用了ProductMoudle中的ProductFragment，并传递相应的参数，显示相应的Fragment界面。
+* productMoudle功能
+   * 通过ARouter调起 购物车模块页面功能。
+
+设计思想见下图：
+![设计思想](https://ssevening.github.io/assets/android_biz_refactor.png)
+
 #### 最新版本
 
 模块|arouter-api|arouter-compiler|arouter-annotation
