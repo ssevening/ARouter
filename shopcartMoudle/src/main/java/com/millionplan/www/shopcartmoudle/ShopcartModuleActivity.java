@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
+import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.millionplan.www.openservicemoudle.ProductService;
@@ -17,15 +18,19 @@ public class ShopcartModuleActivity extends AppCompatActivity {
 
     private View rl_container;
     private View tv_shopcart;
+    @Autowired
+    ProductService productService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ARouter.getInstance().inject(this);
+
         setContentView(R.layout.activity_test_module2);
         rl_container = findViewById(R.id.rl_container);
-        String productStr = ((ProductService) ARouter.getInstance().build("/service/productService").navigation()).getProductStr();
-        Toast.makeText(this, productStr, Toast.LENGTH_SHORT).show();
 
+        String productStr = productService.getProductStr();
+        Toast.makeText(this, productStr, Toast.LENGTH_SHORT).show();
 
         tv_shopcart = findViewById(R.id.tv_shopcart);
         tv_shopcart.setOnClickListener(new View.OnClickListener() {
