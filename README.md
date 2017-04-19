@@ -37,6 +37,11 @@
 
 所以总体而言，ARouter 建立了路径对应的实体类的一个映射关系，在具体调用的时，根据不同的类型，执行了不同的Action。
 
+欢迎关注个人微信公众号
+
+![个人微信公众号](https://ssevening.github.io/assets/weichat_qrcode.jpg)
+
+
 #### 最新版本
 
 模块|arouter-api|arouter-compiler|arouter-annotation
