@@ -11,15 +11,29 @@
 #### 本Demo中实现了以下功能：
 开发了一个Demo，用于多模块业务的开发以及数据通讯和传递，通过ARouter，可以实现模块间解藕，独立。
 * App中修改了到 shopcartMoudle和productMoudle的路径。
+![增加了三个模块](https://ssevening.github.io/assets/arouter/1.png)
 * openServiceMoudle 主要用于模块间数据传递，比如：购物车要获取产品的的一些详细信息，但又不能直接依赖产品模块。
+![Service Moudle](https://ssevening.github.io/assets/arouter/5.png)
 * shopcartMoudle 功能：
    * 跨Moudle调用了ProductMoudle中的ProductService，获得了相应的产品信息
    * 跨Moudle调用了ProductMoudle中的ProductFragment，并传递相应的参数，显示相应的Fragment界面。
+![购物车模块的功能](https://ssevening.github.io/assets/arouter/4.png)
 * productMoudle功能
    * 通过ARouter调起 购物车模块页面功能。
-
+![产品模块功能](https://ssevening.github.io/assets/arouter/3.png)
 设计思想见下图：
 ![设计思想](https://ssevening.github.io/assets/android_biz_refactor.png)
+
+### ARouter核心实现
+* 利用运行时注解生成的路径和具体Class的绑定关系。放到ARouter的索引中。
+![注解生成的类](https://ssevening.github.io/assets/arouter/6.png)
+* 然后执行执行跳转时，选从索引中查找实现类，找到实现类后，再执行navigation操作。
+![跳转类](https://ssevening.github.io/assets/arouter/7.png)
+* 被跳转的类，根据Type的不同，执行的操作也不同，如activity的话，就直接用startActivity，如果是Fragment，直接newInstance(),如果是Service相关，直接通过获取就可以了。
+![根据类型不同,去实现](https://ssevening.github.io/assets/arouter/8.png)
+
+
+所以总体而言，ARouter 建立了路径对应的实体类的一个映射关系，在具体调用的时，根据不同的类型，执行了不同的Action。
 
 #### 最新版本
 
@@ -128,7 +142,7 @@ public class SchameFilterActivity extends Activity {
 }
 ```
 
-AndroidManifest.xml
+AndroidManifest.xmlo
 ``` xml
 <activity android:name=".activity.SchameFilterActivity">
 	<!-- Schame -->
@@ -139,7 +153,7 @@ AndroidManifest.xml
 
 	    <action android:name="android.intent.action.VIEW"/>
 
-	    <category android:name="android.intent.category.DEFAULT"/>
+	    <category android:naoome="android.intent.category.DEFAULT"/>
 	    <category android:name="android.intent.category.BROWSABLE"/>
 	</intent-filter>
 </activity>
