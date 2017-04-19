@@ -10,8 +10,10 @@
 
 #### 本Demo中实现了以下功能：
 开发了一个Demo，用于多模块业务的开发以及数据通讯和传递，通过ARouter，可以实现模块间解藕，独立。
-* App中修改了到 shopcartMoudle和productMoudle的路径。
+* 增加了 shopcartMoudle和productMoudle以及openserviceMoudle三个模块，详见下图
 ![增加了三个模块](https://ssevening.github.io/assets/arouter/1.png)
+然后通过App中的点击事件路由到产品和购物车页面。
+![App中的路由模块](https://ssevening.github.io/assets/arouter/2.png)
 * openServiceMoudle 主要用于模块间数据传递，比如：购物车要获取产品的的一些详细信息，但又不能直接依赖产品模块。
 ![Service Moudle](https://ssevening.github.io/assets/arouter/5.png)
 * shopcartMoudle 功能：
