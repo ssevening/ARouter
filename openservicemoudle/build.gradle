@@ -34,4 +34,6 @@ dependencies {
     compile project(path: ':arouter-api')
     compile project(':arouter-annotation')
     annotationProcessor project(':arouter-compiler')
+    // 这里增加EventBus的依赖
+    compile 'org.greenrobot:eventbus:3.0.0'
 }

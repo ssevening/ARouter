@@ -11,7 +11,10 @@ import android.widget.Toast;
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.millionplan.www.openservicemoudle.EventShopcartChange;
 import com.millionplan.www.openservicemoudle.ProductService;
+
+import org.greenrobot.eventbus.EventBus;
 
 @Route(path = "/module/shopcart", group = "moudle")
 public class ShopcartModuleActivity extends AppCompatActivity {
@@ -46,7 +49,20 @@ public class ShopcartModuleActivity extends AppCompatActivity {
                 fragmentTransaction.replace(R.id.rl_container, fragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
+
+                // 点击的时候，就通知一下产品修改一下页面
+                EventBus.getDefault().post(new EventShopcartChange("Product had changed"));
+
             }
         });
+
+
+
+
     }
+
+
+
+
+
 }
